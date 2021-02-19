@@ -1,0 +1,20 @@
+<%= form_with(model: @article, local: true) do |form| %>
+    <% if @article.errors.any? %>
+        <div class="alert alert-danger">
+            <% @article.errors.full_messages.each do |message| %>
+            <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title, placeholder: "title" %>
+    </div>
+    <div>
+        <%= form.label :description %> <br/>
+        <%= form.text_area :description, placeholder: "description" %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
