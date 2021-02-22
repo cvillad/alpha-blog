@@ -11,7 +11,10 @@
 
   <body class="d-flex flex-column">
     <%= render "shared/navbar" %>
-    <%= render "shared/messages" %>
-    <%= yield %>
+    <div class="page-content">
+      <%= render "shared/messages" %>
+      <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>
