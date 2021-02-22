@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
+    before_action :set_user, only: [:create, :update]
 
     def index
         @articles = Article.all
@@ -14,6 +15,7 @@ class ArticlesController < ApplicationController
 
     def create
         @article = Article.new(article_params)
+        @article.user = User.first
         if @article.save
             flash[:notice] = "Article created successfully"
             redirect_to @article

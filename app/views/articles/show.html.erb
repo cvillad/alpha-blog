@@ -4,10 +4,10 @@
         <div class="col-8">
             <div class="card text-center shadow mb-5 bg-white rounded">
                 <div class="card-header font-italic">
-                    <%= "By someone" %>
+                    by <%= @article.user.username %>
                 </div>
                 <div class="card-body">
-                    <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+                    <div class="card-text"><%= simple_format(@article.description) %></div>
                     <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %> 
                     <%= link_to "Delete", @article, method: :delete, class: "btn btn-outline-danger", data: {confirm: "Are you sure?"} %>
                 </div>
@@ -20,5 +20,7 @@
             </div>
         </div>
     </div>
+    <div class="text-center">
+        <%= link_to "[ Return to articles list ]", articles_path %> 
+    </div>
 </div>
-<%= link_to "back to articles", articles_path %>
