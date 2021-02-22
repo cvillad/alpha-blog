@@ -1,6 +1,6 @@
-<% if @article.errors.any? %>
+<% if object.errors.any? %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <% @article.errors.full_messages.each do |message| %>
+        <% object.errors.full_messages.each do |message| %>
             <%= message %><br/>
         <% end %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
