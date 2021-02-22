@@ -1,2 +1,18 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+html, body {
+    height: 100%;
+    background-color: lightgray !important;
+}
+
+.page-content {
+    flex: 1 0 auto;
+}
+
+.jumbotron{
+    background-image: asset-url('jumbotron.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    size: 425px
+}
