@@ -16,3 +16,17 @@ html, body {
     background-size: cover;
     size: 425px
 }
+
+.page-link {
+    color: #343a40;
+    border-color: lightgray;
+}
+
+.page-link:hover{
+    color: #343a40
+}
+
+.page-item.active .page-link {
+    background-color: lightgray;
+    border-color: #343a40;
+}
