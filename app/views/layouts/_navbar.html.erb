@@ -27,7 +27,6 @@
           <div class="dropdown-menu" aria-labelledby="accountDropdown">
             <%= link_to "Profile", current_user, class: "dropdown-item" %>
             <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Delete profile", user_path(current_user), method: :delete, class: "text-danger dropdown-item", data: { confirm: "Are you sure?" } %>
             <%= link_to "Log out", logout_path, class: "dropdown-item", method: :delete %>
           </div>
         </li>
