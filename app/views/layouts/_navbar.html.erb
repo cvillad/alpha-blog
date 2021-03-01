@@ -18,7 +18,15 @@
           <%= link_to "Create article", new_article_path, class: "dropdown-item" if logged_in? %>
         </div>
       </li>
-      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+          <%= link_to "View categories", categories_path, class: "dropdown-item" %>
+          <%= link_to "Create a new category", new_category_path, class: "dropdown-item" if logged_in? && current_user.admin? %>
+        </div>
+      </li>
       <% if logged_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
