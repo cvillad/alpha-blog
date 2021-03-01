@@ -14,12 +14,11 @@
                             <% if article.user == current_user %>
                                 <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info" %> 
                             <% end %>
-                            <% if article.user == current_user || current_user.admin?%>
-                                <%= link_to "Delete", article, method: :delete, class: "btn btn-outline-danger", data: {confirm: "Are you sure?"} %>
+                            <% if article.user == current_user || current_user.admin? %>
+                                <%= link_to "Delete", article, method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
                             <% end %>
                         <% end %>
                     </div>
-                    
                     <div class="card-footer text-muted">
                         <small>Created <%= time_ago_in_words(article.created_at) %> ago, edited 
                         <%= time_ago_in_words(article.updated_at) %> ago
