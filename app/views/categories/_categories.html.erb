@@ -6,6 +6,13 @@
           <div class="card-body">
               <h5 class="card-title"><%= link_to category.name, category, class: "text-success" %> </h5>
               <p class="card-text"><%= pluralize(category.articles.count, "article") %> </p>
+              <div class="text-center mt-4">
+                <%= link_to "View category", category, class: "btn btn-outline-success" %>
+                <% if logged_in? && current_user.admin? %>
+                  <%= link_to "Edit category", edit_category_path(category), class: "btn btn-outline-info" %>
+                  <%= link_to "Delete category", category_path(category), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
+                <% end %>
+              </div>
           </div>
           <div class="card-footer text-muted">
               <small>Created <%= time_ago_in_words(category.created_at) %> ago, edited 
