@@ -1,0 +1,3 @@
+<h1 class="text-center mt-4">Categories list</h1>
+<%= will_paginate @categories, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+<%= render "categories" %>
